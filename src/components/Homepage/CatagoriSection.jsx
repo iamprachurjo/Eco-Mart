@@ -2,7 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Leaf, ArrowUpRight } from "lucide-react";
 import categories from "@/lib/data/categories";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/shared/AnimatedDiv";
+import {
+  FadeUp,
+  Staggercontainer,
+  StaggerItem,
+} from "@/components/shared/AnimatedDiv";
 
 export default function CategorySection() {
   return (
@@ -27,7 +31,7 @@ export default function CategorySection() {
           </div>
         </FadeUp>
 
-        <StaggerContainer>
+        <Staggercontainer>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {categories.map((category) => (
               <Link
@@ -57,7 +61,7 @@ export default function CategorySection() {
                       {category.title}
                     </h3>
 
-                    <span className="rounded-full bg-[#ECEAE5] px-3 py-1 text-xs font-medium text-[#3E5F47] transition-colors group-hover:bg-[#3E5F47] group-hover:text-white">
+                    <span className="rounded-full bg-[#ECEAE5] px-3 py-1 text-xs font-medium text-[#3E5F47] transition-colors group-hover:bg-[#29A418] group-hover:text-white">
                       {category.description}
                     </span>
                   </div>
@@ -65,7 +69,7 @@ export default function CategorySection() {
               </Link>
             ))}
           </div>
-        </StaggerContainer>
+        </Staggercontainer>
       </div>
     </section>
   );

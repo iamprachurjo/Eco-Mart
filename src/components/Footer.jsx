@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Mail, Phone, MapPin, ShoppingBag } from "lucide-react";
 import {
   FadeIn,
-  StaggerContainer,
+  Staggercontainer,
   StaggerItem,
 } from "@/components/shared/AnimatedDiv";
 
@@ -72,7 +72,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#29A418] pt-20 pb-10 text-[#101B22]">
       <div className="container mx-auto px-4">
-        <StaggerContainer>
+        <Staggercontainer>
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             <StaggerItem>
               <div className="space-y-6">
@@ -254,7 +254,7 @@ export default function Footer() {
               </div>
             </StaggerItem>
           </div>
-        </StaggerContainer>
+        </Staggercontainer>
 
         <FadeIn>
           <div className="mt-16 border-t border-[#273B2D] pt-8 text-center text-sm text-[#B0B3A6]">

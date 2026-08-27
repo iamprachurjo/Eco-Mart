@@ -14,7 +14,7 @@ import {
   FadeLeft,
   FadeRight,
   FadeUp,
-  StaggerContainer,
+  Staggercontainer,
   StaggerItem,
 } from "@/components/shared/AnimatedDiv";
 
@@ -69,7 +69,7 @@ export default function ProductDetailsPage({ product, user }) {
                 </span>
               )}
               {product.condition && (
-                <span className="rounded-full bg-[#3E5F47]/10 px-4 py-1 text-sm font-medium text-[#3E5F47]">
+                <span className="rounded-full bg-[#29A418]/10 px-4 py-1 text-sm font-medium text-[#3E5F47]">
                   Condition: {product.condition}
                 </span>
               )}
@@ -102,7 +102,7 @@ export default function ProductDetailsPage({ product, user }) {
                 <Button
                   type="submit"
                   size="lg"
-                  className="flex-1 w-full rounded-full bg-[#3E5F47] hover:bg-[#304B38] text-white text-sm font-medium transition-all duration-200"
+                  className="flex-1 w-full rounded-full bg-[#29A418] hover:bg-[#304B38] text-white text-sm font-medium transition-all duration-200"
                 >
                   <ShoppingCart className="mr-2 h-5 w-5" />
                   Buy Now

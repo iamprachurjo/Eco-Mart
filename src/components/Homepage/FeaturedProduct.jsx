@@ -3,10 +3,14 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { serverFetch } from "@/lib/core/server";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/shared/AnimatedDiv";
+import {
+  FadeUp,
+  Staggercontainer,
+  StaggerItem,
+} from "@/components/shared/AnimatedDiv";
 
 export default async function FeaturedProducts() {
-  const products = await serverFetch('/api/featuredProduct');
+  const products = await serverFetch("/api/featuredProduct");
   return (
     <section className="py-24 overflow-hidden">
       <div className="container mx-auto px-4">
@@ -19,7 +23,9 @@ export default async function FeaturedProducts() {
                   Fresh Today
                 </span>
               </div>
-              <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Featured Items</h2>
+              <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+                Featured Items
+              </h2>
             </div>
             <Link
               href="/products"
@@ -31,7 +37,7 @@ export default async function FeaturedProducts() {
           </div>
         </FadeUp>
 
-        <StaggerContainer>
+        <Staggercontainer>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {products.map((product) => (
               <StaggerItem key={product._id}>
@@ -42,7 +48,7 @@ export default async function FeaturedProducts() {
                         <div className="absolute left-4 top-4 z-10 rounded-full bg-white/90 backdrop-blur-sm px-3 py-1.5 text-xs font-bold tracking-wide text-[#3E5F47] shadow-sm">
                           {product.condition}
                         </div>
-                        <div className="absolute right-4 bottom-4 z-10 rounded-full bg-[#3E5F47] px-3 py-1 text-xs font-medium text-white">
+                        <div className="absolute right-4 bottom-4 z-10 rounded-full bg-[#29A418] px-3 py-1 text-xs font-medium text-white">
                           {product.category}
                         </div>
                         <Image
@@ -60,15 +66,26 @@ export default async function FeaturedProducts() {
                     </Link>
                     <div className="mt-5 flex items-start justify-between gap-4 px-2">
                       <div className="flex-1">
-                        <h3 className="line-clamp-1 text-lg font-semibold text-foreground transition-colors group-hover:text-[#3E5F47]">{product.title}</h3>
-                        <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{product.description}</p>
+                        <h3 className="line-clamp-1 text-lg font-semibold text-foreground transition-colors group-hover:text-[#3E5F47]">
+                          {product.title}
+                        </h3>
+                        <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+                          {product.description}
+                        </p>
                         <div className="mt-3 text-xs text-muted-foreground">
-                          Sold by <span className="font-medium text-[#3E5F47]">{product.sellerInfo.name}</span>
+                          Sold by{" "}
+                          <span className="font-medium text-[#3E5F47]">
+                            {product.sellerInfo.name}
+                          </span>
                         </div>
                       </div>
                       <div className="text-right">
-                        <span className="block text-xl font-bold text-[#3E5F47]">৳{product.price.toLocaleString()}</span>
-                        <span className={`mt-2 inline-flex rounded-full px-2 py-1 text-xs font-medium ${product.status === "available" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>
+                        <span className="block text-xl font-bold text-[#3E5F47]">
+                          ৳{product.price.toLocaleString()}
+                        </span>
+                        <span
+                          className={`mt-2 inline-flex rounded-full px-2 py-1 text-xs font-medium ${product.status === "available" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}
+                        >
                           {product.status}
                         </span>
                       </div>
@@ -78,7 +95,7 @@ export default async function FeaturedProducts() {
               </StaggerItem>
             ))}
           </div>
-        </StaggerContainer>
+        </Staggercontainer>
 
         <div className="mt-10 flex justify-center md:hidden">
           <Link
