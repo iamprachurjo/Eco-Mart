@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// ---- Mock data — swap with real data from your API later ----
+
 const MOCK_MONTHLY_DATA = [
   { month: "Jan", sales: 9800 },
   { month: "Feb", sales: 12400 },
